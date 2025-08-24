@@ -1,0 +1,1 @@
+msdf-bmfont --reuse -o res/font.png -m 2048,2048 -i charset.txt -s 64 -r 3 -p 4 -t msdf fusion8.ttf
