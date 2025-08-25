@@ -22,12 +22,14 @@ class Main extends App {
 		super.init();
 
 		// 加载字体
-		font = hxd.Res.fusion8.toSdfFont(32, h2d.Font.SDFChannel.MultiChannel);
+		font = hxd.Res.fusion8.toFont();
 
 		var text = new h2d.Text(font);
-		text.text = "我是中文字abc哦";
-		text.color = new Vec4(0, 1, 1, 1);
-		text.scale(1);
+		text.text = "我是中文字abc哦l两情相悦老套，。不是吧。模拟，糯米，囊攮齉";
+		text.smooth = false;
+		text.dropShadow = {dx: 1, dy: 1, color: 0x030303, alpha: 0.8};
+		text.color = new Vec4(0.75, 1, 1, 1);
+		text.scale(4);
 
 		s2d.addChild(text);
 
@@ -35,11 +37,8 @@ class Main extends App {
 		var window = hxd.Window.getInstance();
 		window.resize(800, 600);
 		trace("init window ok");
-		// 设置SDL窗口标志
 
-		// window.displayMode = Fullscreen;
-		// window.displayMode = Windowed;
-		engine.backgroundColor = 0x202020;
+		engine.backgroundColor = 0x638799;
 	}
 
 	override function update(dt:Float) {
