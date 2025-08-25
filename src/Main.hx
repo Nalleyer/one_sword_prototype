@@ -7,7 +7,10 @@ import h2d.Text;
 class Main extends App {
 	private var font:h2d.Font;
 
+	private var style:h2d.domkit.Style;
+
 	private var counter: Int = 0;
+	private var debugLabel:h2d.Text;
 
 	static inline final TEXT_SCALE = 4;
 	// 因为ui里面不能调整字体大小，只能缩放字体倍数了
@@ -47,6 +50,8 @@ class Main extends App {
 
 		s2d.addChild(text);
 
+		debugLabel = text;
+
 		// 直接在这里指定窗口模式
 		var window = hxd.Window.getInstance();
 		window.resize(240 * LOGIC_SCALE, 136 * LOGIC_SCALE);
@@ -57,7 +62,12 @@ class Main extends App {
 		//view.mybmp.alpha = 0.8;
 		view.scale(UI_SCALE);
 
-		var style = new h2d.domkit.Style();
+		view.testBtn.label = "点我";
+		view.testBtn.onClick = function() {
+			counter += 1;
+		}
+
+		style = new h2d.domkit.Style();
 		// resource referencing res/style.css (see Heaps Resources documentation)
 		style.load(hxd.Res.style);
 		style.addObject(view);
@@ -69,6 +79,9 @@ class Main extends App {
 
 	override function update(dt:Float) {
 		// 简单渲染
+		debugLabel.text = "点击次数: " + counter;
+		// 这行很关键，不然hover之类的样式无法刷新生效
+		style.sync();
 	}
 
 	private function l2s(pos:Float):Float {

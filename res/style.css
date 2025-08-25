@@ -8,3 +8,41 @@ flow.box {
 .label {
     font : url("fusion8.fnt");
 }
+
+button {
+	background: #333;
+	fill-width: true;
+	height: 12;
+    width: 16;
+	transition: background 0.2;
+}
+
+button.highlight {
+	background: #a33;
+}
+
+button text {
+	align: middle middle;
+}
+
+button:hover {
+	background: #fdd01a;
+}
+
+button .hover {
+    background: #fd1af9;
+}
+
+button text {
+	align: middle middle;
+	color : #aaa;
+	transition : color;
+}
+
+button:hover text {
+	color : white;
+}
+
+button:active {
+	background: #25ea8e;
+}
