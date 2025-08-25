@@ -1,3 +1,7 @@
+import TicColors.TIC_DARK_CYAN;
+import TicColors.TIC_LIGHT_GRAY;
+import TicColors.TIC_WHITE;
+import TicColors.TIC_LIGHT_BLUE;
 import TicColors.TIC_DARK_BLUE;
 import TicColors.TIC_DARK_GRAY;
 import hxsl.Types.Vec4;
@@ -38,7 +42,7 @@ class Main extends App {
 
 		// 固定加一个背景
 		var bgGraphic = new h2d.Graphics(s2d);
-		bgGraphic.beginFill(TIC_DARK_BLUE);
+		bgGraphic.beginFill(TIC_WHITE);
 		bgGraphic.drawRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 		bgGraphic.endFill();
 
@@ -46,16 +50,16 @@ class Main extends App {
 		font = hxd.Res.fusion8.toFont();
 
 		var text = new h2d.Text(font);
-		text.text = "我是中文字abc哦l两情相悦老套，。不是吧。模拟，糯米，囊攮齉";
+		text.text = "";
 		text.smooth = false;
+		text.color = hexToVec4(TIC_DARK_GRAY);
 		text.dropShadow = {
-			dx: 0.5,
-			dy: 0.5,
-			color: TIC_DARK_GRAY,
-			alpha: 0.8
+			dx: 0.3,
+			dy: 0.3,
+			color: TIC_LIGHT_GRAY,
+			alpha: 1,
 		};
-		text.color = new Vec4(0.75, 1, 1, 1);
-		text.x = 120;
+		text.x = SCREEN_WIDTH / 4;
 		text.y = 8;
 		text.scale(TEXT_SCALE);
 
@@ -91,8 +95,15 @@ class Main extends App {
 
 	override function update(dt:Float) {
 		// 简单渲染
-		debug_label.text = "点击次数: " + counter;
+		debug_label.text = "我是中文字体。ABCOo1029847382956了这么多下： " + counter;
 		// 这行很关键，不然hover之类的样式无法刷新生效
 		style.sync();
+	}
+
+	function hexToVec4(hex:Int):Vec4 {
+		var r = ((hex >> 16) & 0xFF) / 255.0;
+		var g = ((hex >> 8) & 0xFF) / 255.0;
+		var b = (hex & 0xFF) / 255.0;
+		return new Vec4(r, g, b, 1.0);
 	}
 }

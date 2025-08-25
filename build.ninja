@@ -2,7 +2,7 @@
 builddir = .
 
 rule stylus
-  command = pwsh -c "stylus ./$in --out ./$out"
+  command = nu -c "stylus ./$in --out ./$out"
   description = Building CSS from $in
 
 rule haxe
