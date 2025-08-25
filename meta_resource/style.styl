@@ -1,0 +1,75 @@
+// 基础数据定义
+scale = 2
+screen-width = 240
+screen-height = 136
+
+TIC_COLOR_0 = #1A1C2C
+TIC_COLOR_1 = #5D275D
+TIC_COLOR_2 = #B13E53
+TIC_COLOR_3 = #EF7D57
+TIC_COLOR_4 = #FFCD75
+TIC_COLOR_5 = #A7F070
+TIC_COLOR_6 = #38B764
+TIC_COLOR_7 = #257179
+TIC_COLOR_8 = #29366F
+TIC_COLOR_9 = #3B5DC9
+TIC_COLOR_10 = #41A6F6
+TIC_COLOR_11 = #73EFF7
+TIC_COLOR_12 = #F4F4F4
+TIC_COLOR_13 = #94B0C2
+TIC_COLOR_14 = #566C86
+TIC_COLOR_15 = #333C57
+
+// name tic colors
+
+TIC_DARK_BLUE = TIC_COLOR_0
+TIC_DARK_PURPLE = TIC_COLOR_1
+TIC_DARK_RED = TIC_COLOR_2
+TIC_ORANGE = TIC_COLOR_3
+TIC_YELLOW = TIC_COLOR_4
+TIC_LIGHT_GREEN = TIC_COLOR_5
+TIC_GREEN = TIC_COLOR_6
+TIC_DARK_CYAN = TIC_COLOR_7
+TIC_BLUE = TIC_COLOR_8
+TIC_LIGHT_BLUE = TIC_COLOR_9
+TIC_CYAN = TIC_COLOR_10
+TIC_LIGHT_CYAN = TIC_COLOR_11
+TIC_WHITE = TIC_COLOR_12
+TIC_LIGHT_GRAY = TIC_COLOR_13
+TIC_GRAY = TIC_COLOR_14
+TIC_DARK_GRAY = TIC_COLOR_15
+
+// 函数定义
+// 根据缩放倍数计算尺寸
+scaled(size)
+    return size * scale
+
+// UI组件样式
+flow.box
+    padding scaled(20)
+    background TIC_DARK_GRAY
+    width scaled(screen-width / 4)
+    height scaled(screen-height)
+
+.label
+    font url("fusion8.fnt")
+
+button
+    background TIC_GRAY
+    fill-width true
+    height scaled(6)  // 使用缩放函数
+    width scaled(8)   // 使用缩放函数
+    transition background 0.2
+
+    text
+        align middle middle
+        color TIC_WHITE
+        transition color
+
+    &:hover
+        background TIC_YELLOW
+        text
+            color TIC_DARK_BLUE
+
+    &:active
+        background TIC_ORANGE

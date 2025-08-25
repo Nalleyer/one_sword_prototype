@@ -4,5 +4,4 @@
 -lib format
 -lib hlsdl
 -hl one_sword.hl
--D linux
 -main Main
