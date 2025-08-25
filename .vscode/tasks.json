@@ -2,10 +2,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "haxe: build",
+            "label": "ninja: build",
             "type": "shell",
-            "command": "haxe",
-            "args": ["compile_linux.hxml"],
+            "command": "ninja",
+            "args": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -17,6 +17,32 @@
                 "panel": "shared"
             },
             "problemMatcher": ["$haxe"]
+        },
+        {
+            "label": "ninja: run",
+            "type": "shell",
+            "command": "ninja",
+            "args": ["run"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "ninja: clean",
+            "type": "shell",
+            "command": "ninja",
+            "args": ["-t", "clean"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
         }
     ]
 }

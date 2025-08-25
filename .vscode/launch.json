@@ -10,7 +10,7 @@
             "type": "hl",
             "cwd": "${workspaceFolder}",
             "program": "${workspaceFolder}/one_sword.hl",
-            "preLaunchTask": "haxe: build"
+            "preLaunchTask": "ninja: build"
         }
     ]
 }

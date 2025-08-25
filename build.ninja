@@ -1,0 +1,22 @@
+# Ninja build file
+builddir = .
+
+rule stylus
+  command = pwsh -c "stylus ./$in --out ./$out"
+  description = Building CSS from $in
+
+rule haxe
+  command = haxe compile.hxml
+  description = Compiling Haxe
+
+rule run
+  command = hl $in
+  description = Running $in
+
+build res/style.css: stylus meta_resource/style.styl
+
+build one_sword.hl: haxe res/style.css | src/Main.hx src/Character.hx src/Buff.hx src/Instruction.hx src/SampleView.hx src/TicColors.hx compile.hxml
+
+build run: run one_sword.hl | one_sword.hl res/style.css
+
+default one_sword.hl res/style.css
