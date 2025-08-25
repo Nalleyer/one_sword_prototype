@@ -9,10 +9,8 @@
             "request": "launch",
             "type": "hl",
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": {
-                "type": "haxe",
-                "args": "active configuration"
-            }
+            "program": "${workspaceFolder}/one_sword.hl",
+            "preLaunchTask": "haxe: build"
         }
     ]
 }

@@ -1,0 +1,10 @@
+flow.box {
+    padding : 20;
+    background : #40000040;
+    width: 120;
+    height: 272;
+}
+
+.label {
+    font : url("fusion8.fnt");
+}

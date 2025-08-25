@@ -1,5 +1,6 @@
 -cp src
 -lib heaps
+-lib domkit
 -lib format
 -lib hlsdl
 -hl one_sword.hl
