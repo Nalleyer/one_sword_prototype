@@ -2,10 +2,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "ninja: build",
+            "label": "haxe: build",
             "type": "shell",
-            "command": "ninja",
-            "args": [],
+            "command": "haxe",
+            "args": ["compile.hxml"],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -19,10 +19,10 @@
             "problemMatcher": ["$haxe"]
         },
         {
-            "label": "ninja: run",
+            "label": "haxe: run",
             "type": "shell",
-            "command": "ninja",
-            "args": ["run"],
+            "command": "haxe",
+            "args": ["run.hxml"],
             "group": "test",
             "presentation": {
                 "echo": true,
@@ -32,10 +32,10 @@
             }
         },
         {
-            "label": "ninja: clean",
+            "label": "clean",
             "type": "shell",
-            "command": "ninja",
-            "args": ["-t", "clean"],
+            "command": "pwsh",
+            "args": ["-c", "Remove-Item -Path one_sword.hl -ErrorAction SilentlyContinue"],
             "group": "build",
             "presentation": {
                 "echo": true,

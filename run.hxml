@@ -6,3 +6,5 @@
 -lib hlsdl
 -hl one_sword.hl
 -main Main
+--next
+-cmd hl one_sword.hl
